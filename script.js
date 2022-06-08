@@ -30,9 +30,9 @@ var promoPopup = document.getElementsByClassName('promo')[0];
 var promoPopupClose = document.getElementsByClassName('promo-close')[0];
 
 if (isMobile()) {
-    setTimeout(function () {
-        promoPopup.style.display = 'table';
-    }, 20000);
+    //setTimeout(function () {
+    //    promoPopup.style.display = 'table';
+    //}, 20000);
 }
 
 promoPopupClose.addEventListener('click', function (e) {
