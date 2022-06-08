@@ -216,20 +216,20 @@ function startGUI () {
     gui.add(config, 'PRESSURE', 0.0, 1.0).name('压力');
     gui.add(config, 'CURL', 0, 50).name('涡度').step(1);
     gui.add(config, 'SPLAT_RADIUS', 0.01, 1.0).name('飞溅半径');
-    gui.add(config, 'SHADING').name('着色').onFinishChange(updateKeywords);
+    gui.add(config, 'SHADING').name('阴影').onFinishChange(updateKeywords);
     gui.add(config, 'COLORFUL').name('色彩');
     gui.add(config, 'PAUSED').name('暂停').listen();
 
     gui.add({ fun: () => {
         splatStack.push(parseInt(Math.random() * 20) + 5);
-    } }, 'fun').name('随机 splats');
+    } }, 'fun').name('随机溅射');
 
-    let bloomFolder = gui.addFolder('Bloom');
+    let bloomFolder = gui.addFolder('🌟光泽');
     bloomFolder.add(config, 'BLOOM').name('启用').onFinishChange(updateKeywords);
-    bloomFolder.add(config, 'BLOOM_INTENSITY', 0.1, 2.0).name('intensity');
-    bloomFolder.add(config, 'BLOOM_THRESHOLD', 0.0, 1.0).name('threshold');
+    bloomFolder.add(config, 'BLOOM_INTENSITY', 0.1, 2.0).name('强度');
+    bloomFolder.add(config, 'BLOOM_THRESHOLD', 0.0, 1.0).name('临界值');
 
-    let sunraysFolder = gui.addFolder('☀光照');
+    let sunraysFolder = gui.addFolder('💡光照');
     sunraysFolder.add(config, 'SUNRAYS').name('启用').onFinishChange(updateKeywords);
     sunraysFolder.add(config, 'SUNRAYS_WEIGHT', 0.3, 1.0).name('强度');
 
